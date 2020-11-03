@@ -8,7 +8,7 @@ import java.math.*;
  **/
 class Solution
 {
-    public static void main(String args[])
+    public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
         int M = in.nextInt();
@@ -25,7 +25,7 @@ class Solution
 
 
 
-        System.out.println(in.nextLine());
+        //System.out.println(in.nextLine());
 
         // Write an answer using System.out.println()
         // To debug: System.err.println("Debug messages...");
@@ -34,7 +34,7 @@ class Solution
         System.out.println(NbChemins(0, 1,10,10, tab));
     }
 
-    static int NbChemins(int a, int b, int M, int N, String tab[]) // a et b sont les coordonnées d'une case
+    static int NbChemins(int a, int b, int M, int N, String[] tab) // a et b sont les coordonnées d'une case
     {
 
         if (a == N || b == M )
@@ -46,7 +46,7 @@ class Solution
         if (tab[b].charAt(a) == 1)
             return 0; // chemin inaccessible car la case contient 1
 
-        return NbChemins(M - 1, N, M, N, tab) + NbChemins(M, N-1, M,N, tab);
+        return NbChemins(M - 1, N, M, N, tab) + NbChemins(M, N-1, M,N, tab); // case de droite + case du bas
     }
 
 
